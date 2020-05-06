@@ -12,17 +12,25 @@ namespace monthseason
         {
             Console.Write("월 입력: ");
             String month = Console.ReadLine();
-
+            String re = "";
             for(int i = 1; i <= 12; i++)
             {
                 if (month.Contains(""+i))
                 {
-                    if (i <= 5) { Console.Write("봄"); break; }
-                    if(i<=8) {Console.Write("여름"); break; }
-                    if (i<=11) {Console.Write("가을"); break; }
-                    else Console.Write("겨울");
+                    switch (i)
+                    {
+                        case 3: case 4:case 5:
+                            re = "봄";break;
+                        case 6:case 7:case 8:
+                            re = "여름";break;
+                        case 12:case 1:case 2:
+                            re = "겨울";break;
+                        case 10:case 11:case 9:
+                            re = "가을";break;
+                    }
                 }
             }
+            Console.Write(re);
         }
     }
 }
