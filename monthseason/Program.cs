@@ -17,17 +17,10 @@ namespace monthseason
             {
                 if (month.Contains(""+i))
                 {
-                    switch (i)
-                    {
-                        case 3: case 4:case 5:
-                            Console.Write("봄");break;
-                        case 6:case 7:case 8:
-                            Console.Write("여름"); break;
-                        case 10:case 11:case 9:
-                            Console.Write("가을"); break;
-                        default:
-                            Console.Write("겨울"); break;
-                    }
+                    if (i <= 5) { Console.Write("봄"); break; }
+                    if(i<=8) {Console.Write("여름"); break; }
+                    if (i<=11) {Console.Write("가을"); break; }
+                    else Console.Write("겨울");
                 }
             }
         }
